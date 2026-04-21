@@ -3,13 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus - Streamline Your Workflow</title>
+    <title>Nexus - Interactive Demo</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Amplitude Unified SDK Loading -->
+    
+    <!-- Amplitude Wizard Analytics Tracker -->
     <script type="text/javascript">
-        !function(window,document){var amplitude=window.amplitude||{_q:[],_iq:{}};if(amplitude.invoked)window.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{amplitude.invoked=!0;var as=document.createElement("script");as.type="text/javascript",as.integrity="sha384-v9un+wM0pGZ02F0KxKk/5bN4eP2o2Z5l+w2V3X1k5v5Wz2Y4z5v5Wz2Y4z5v5Wz2",as.crossOrigin="anonymous",as.async=!0,as.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz",as.onload=function(){window.amplitude.runQueuedFunctions()};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(as,s);function proxy(obj,fn){obj.prototype[fn]=function(){this._q.push({name:fn,args:Array.prototype.slice.call(arguments)});return this}}var Identify=function(){this._q=[];return this};var identifyFuncs=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove"];for(var i=0;i<identifyFuncs.length;i++){proxy(Identify,identifyFuncs[i])}amplitude.Identify=Identify;var Revenue=function(){this._q=[];return this};var revenueFuncs=["setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"];for(var j=0;j<revenueFuncs.length;j++){proxy(Revenue,revenueFuncs[j])}amplitude.Revenue=Revenue;var funcs=["init","initAll","track","identify","setGroup","revenue","flush","getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"];function setUpProxy(instance){function createProxy(fn){instance[fn]=function(){instance._q.push({name:fn,args:Array.prototype.slice.call(arguments)})}}for(var k=0;k<funcs.length;k++){createProxy(funcs[k])} }setUpProxy(amplitude);amplitude.getInstance=function(instance){instance=instance||"_default";if(!amplitude._iq.hasOwnProperty(instance)){amplitude._iq[instance]={_q:[]};setUpProxy(amplitude._iq[instance])}return amplitude._iq[instance]};window.amplitude=amplitude}}(window,document);
+        !function(){"use strict";!function(e,t){var r=e.amplitude||{_q:[],_iq:{}};if(r.invoked)e.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{var n=function(e,t){e.prototype[t]=function(){return this._q.push({name:t,args:Array.prototype.slice.call(arguments,0)}),this}},s=function(e,t,r){return function(n){e._q.push({name:t,args:Array.prototype.slice.call(r,0),resolve:n})}},o=function(e,t,r){e[t]=function(){if(r)return{promise:new Promise(s(e,t,Array.prototype.slice.call(arguments)))}}},i=function(e){for(var t=0;t<m.length;t++)o(e,m[t],!1);for(var r=0;r<y.length;r++)o(e,y[r],!0)};r.invoked=!0;var a=t.createElement("script");a.type="text/javascript",a.crossOrigin="anonymous",a.src="https://cdn.amplitude.com/libs/plugin-ga-events-forwarder-browser-0.4.2-min.js.gz",a.onload=function(){e.gaEventsForwarder&&e.gaEventsForwarder.plugin&&e.amplitude.add(e.gaEventsForwarder.plugin())};var c=t.createElement("script");c.type="text/javascript",c.integrity="sha384-pY2pkwHaLM/6UIseFHVU3hOKr6oAvhLcdYkoRZyaMDWLjpM6B7nTxtOdE823WAOQ",c.crossOrigin="anonymous",c.async=!0,c.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.0-min.js.gz",c.onload=function(){e.amplitude.runQueuedFunctions||console.log("[Amplitude] Error: could not load SDK")};var u=t.getElementsByTagName("script")[0];u.parentNode.insertBefore(a,u),u.parentNode.insertBefore(c,u);for(var p=function(){return this._q=[],this},d=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove","getUserProperties"],l=0;l<d.length;l++)n(p,d[l]);r.Identify=p;for(var g=function(){return this._q=[],this},v=["getEventProperties","setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"],f=0;f<v.length;f++)n(g,v[f]);r.Revenue=g;var m=["getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"],y=["init","add","remove","track","logEvent","identify","groupIdentify","setGroup","revenue","flush"];i(r),r.createInstance=function(e){return r._iq[e]={_q:[]},i(r._iq[e]),r._iq[e]},e.amplitude=r}}(window,document)}();
+        
+        // Initialize with API Key
+        amplitude.init('7faa918bd690b2cc4733b67bb264ce98');
     </script>
+    
     <style>
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -18,6 +33,43 @@
         .page-content { display: none; }
         .page-content.active { display: block; animation: fadeIn 0.4s ease-out; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Demo Interactive Components */
+        .demo-window { 
+            background: #ffffff; 
+            border: 1px solid #e2e8f0; 
+            border-radius: 16px; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15); 
+            overflow: hidden;
+            height: 550px;
+        }
+        .demo-sidebar { width: 70px; background: #0f172a; display: flex; flex-direction: column; align-items: center; padding-top: 24px; gap: 24px; }
+        .demo-nav-item { width: 40px; height: 40px; border-radius: 10px; background: rgba(255,255,255,0.05); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; justify-content: center; color: #94a3b8; }
+        .demo-nav-item:hover { background: rgba(255,255,255,0.15); color: #fff; }
+        .demo-nav-item.active { background: #3b82f6; color: #fff; }
+        
+        .progress-fill { transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+        
+        .hotspot { position: relative; cursor: help; }
+        .hotspot::after {
+            content: '';
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #3b82f6;
+            border-radius: 50%;
+            top: -4px;
+            right: -4px;
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0px rgba(59, 130, 246, 0.4); }
+            70% { box-shadow: 0 0 0 10px rgba(59, 130, 246, 0); }
+            100% { box-shadow: 0 0 0 0px rgba(59, 130, 246, 0); }
+        }
+
+        .task-item.completed { opacity: 0.5; text-decoration: line-through; }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -35,11 +87,12 @@
                 <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
                     <button onclick="navigateTo('features')" class="nav-link hover:text-blue-600 transition-colors">Features</button>
                     <button onclick="navigateTo('pricing')" class="nav-link hover:text-blue-600 transition-colors">Pricing</button>
+                    <button onclick="navigateTo('demo')" class="nav-link hover:text-blue-600 transition-colors">Demo</button>
                     <button onclick="navigateTo('about')" class="nav-link hover:text-blue-600 transition-colors">About</button>
                 </div>
                 <div class="flex items-center gap-4">
-                    <button onclick="showModal('Log In')" class="text-sm font-semibold text-slate-700 hover:text-blue-600">Log In</button>
-                    <button onclick="showModal('Sign Up')" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
+                    <button id="nav-login-btn" onclick="handleCtaClick('Log In', 'Nav Bar')" class="text-sm font-semibold text-slate-700 hover:text-blue-600">Log In</button>
+                    <button id="nav-signup-btn" onclick="handleCtaClick('Sign Up', 'Nav Bar')" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
                         Sign Up
                     </button>
                 </div>
@@ -55,87 +108,139 @@
                 <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Manage your projects <br><span class="gradient-text">without the chaos.</span></h1>
                 <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">Nexus helps teams ship faster by centralizing feedback, tracking progress, and automating the busy work.</p>
                 <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                    <button onclick="showModal('Sign Up')" class="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl">Sign Up Now</button>
-                    <button onclick="navigateTo('features')" class="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm">View Features</button>
+                    <button onclick="handleCtaClick('Sign Up Now', 'Hero')" class="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl">Sign Up Now</button>
+                    <button onclick="navigateTo('demo')" class="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm">View Live Demo</button>
                 </div>
             </div>
         </header>
     </main>
 
-    <!-- PAGE: FEATURES -->
-    <main id="page-features" class="page-content pt-32 px-4">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Everything you need to scale</h2>
-                <p class="text-slate-600 max-w-2xl mx-auto">Powerful tools designed for high-performance teams.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 pb-32">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Enterprise Security</h3>
-                    <p class="text-slate-600">Your data is encrypted at rest and in transit with bank-grade security protocols.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Real-time Analytics</h3>
-                    <p class="text-slate-600">Track team velocity and project health with beautiful, automated dashboards.</p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Team Collaboration</h3>
-                    <p class="text-slate-600">Comment, tag, and assign tasks without ever leaving the main dashboard view.</p>
-                </div>
-            </div>
-        </div>
-    </main>
-
-    <!-- PAGE: PRICING -->
-    <main id="page-pricing" class="page-content pt-32 px-4">
+    <!-- PAGE: DEMO -->
+    <main id="page-demo" class="page-content pt-32 px-4">
         <div class="max-w-7xl mx-auto pb-32">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-bold mb-4">Simple, transparent pricing</h2>
-                <p class="text-slate-600">Start for free, upgrade as you grow.</p>
+            <div class="mb-12 text-center">
+                <h2 class="text-4xl font-bold mb-4">Interactive Sandbox</h2>
+                <p class="text-slate-500 max-w-xl mx-auto">Try the Nexus dashboard right here. Complete tasks and see your project health update in real-time.</p>
             </div>
-            <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-8">
-                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm">
-                    <h3 class="text-xl font-bold mb-2">Starter</h3>
-                    <div class="text-4xl font-bold mb-6">$0 <span class="text-lg text-slate-400 font-normal">/mo</span></div>
-                    <ul class="space-y-4 mb-8 text-slate-600">
-                        <li class="flex items-center gap-2"><svg class="text-green-500" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Up to 5 users</li>
-                        <li class="flex items-center gap-2"><svg class="text-green-500" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Basic Analytics</li>
-                    </ul>
-                    <button onclick="showModal('Sign Up')" class="w-full py-3 rounded-xl border border-slate-200 font-bold hover:bg-slate-50 transition-colors">Get Started</button>
-                </div>
-                <div class="bg-slate-900 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-blue-600 px-4 py-1 text-xs font-bold uppercase tracking-widest">Popular</div>
-                    <h3 class="text-xl font-bold mb-2">Pro</h3>
-                    <div class="text-4xl font-bold mb-6">$29 <span class="text-lg text-slate-400 font-normal">/mo</span></div>
-                    <ul class="space-y-4 mb-8 text-slate-300">
-                        <li class="flex items-center gap-2"><svg class="text-blue-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Unlimited users</li>
-                        <li class="flex items-center gap-2"><svg class="text-blue-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Advanced Replays</li>
-                    </ul>
-                    <button onclick="showModal('Request Demo')" class="w-full py-3 rounded-xl bg-blue-600 font-bold hover:bg-blue-700 transition-colors">Try Pro Free</button>
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <!-- PAGE: ABOUT -->
-    <main id="page-about" class="page-content pt-32 px-4">
-        <div class="max-w-3xl mx-auto text-center pb-32">
-            <h2 class="text-4xl font-bold mb-8">We're on a mission to end project management fatigue.</h2>
-            <p class="text-lg text-slate-600 mb-6 leading-relaxed">
-                Founded in 2024, Nexus was built by developers who were tired of switching between five different tools just to see what was happening in a sprint.
-            </p>
-            <p class="text-lg text-slate-600 leading-relaxed">
-                We believe that software should get out of your way and let you focus on what matters: building incredible products.
-            </p>
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
+                <div class="lg:col-span-4 space-y-6">
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+                        <h3 class="font-bold text-lg mb-4">Demo Checklist</h3>
+                        <div class="space-y-4">
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" id="chk-api" onchange="syncDemoTask('api', this.checked)" class="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                                <span class="text-slate-600 group-hover:text-slate-900 transition-colors">Mark "API Integration" as done</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" id="chk-interview" onchange="syncDemoTask('interview', this.checked)" class="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                                <span class="text-slate-600 group-hover:text-slate-900 transition-colors">Complete "User Interview" task</span>
+                            </label>
+                            <label class="flex items-center gap-3 cursor-pointer group">
+                                <input type="checkbox" id="chk-insights" onchange="syncDemoTask('insights', this.checked)" class="w-5 h-5 rounded border-slate-300 text-blue-600 focus:ring-blue-500">
+                                <span class="text-slate-600 group-hover:text-slate-900 transition-colors">Switch to "Insights" view</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="bg-blue-600 text-white p-6 rounded-2xl shadow-xl">
+                        <h4 class="font-bold mb-2">Ready to save 10 hours a week?</h4>
+                        <p class="text-blue-100 text-sm mb-6">Our users report a 40% increase in productivity within the first 30 days.</p>
+                        <button onclick="handleCtaClick('Start Free Trial', 'Demo Sandbox')" class="w-full bg-white text-blue-600 py-3 rounded-xl font-bold hover:bg-blue-50 transition-colors shadow-lg">Start Free Trial</button>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-8">
+                    <div class="demo-window flex">
+                        <aside class="demo-sidebar">
+                            <div onclick="demoNavigate('tasks')" id="demo-nav-tasks" class="demo-nav-item active" title="Tasks">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4m-2 12v6H4V4h10"></path></svg>
+                            </div>
+                            <div onclick="demoNavigate('insights')" id="demo-nav-insights" class="demo-nav-item" title="Insights">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"></path></svg>
+                            </div>
+                            <div class="demo-nav-item" title="Team"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+                            <div class="mt-auto mb-6 demo-nav-item" title="Settings"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+                        </aside>
+
+                        <div class="flex-1 flex flex-col overflow-y-auto">
+                            <header class="h-16 border-b border-slate-100 flex items-center justify-between px-6 bg-slate-50/50 sticky top-0 z-10 backdrop-blur-sm">
+                                <div class="flex items-center gap-3">
+                                    <span class="text-sm font-bold text-slate-800">Q4 Strategy Hub</span>
+                                    <span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-[10px] font-bold rounded uppercase">Active</span>
+                                </div>
+                                <div class="flex items-center gap-2">
+                                    <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white shadow-sm"></div>
+                                    <div class="w-8 h-8 rounded-full bg-blue-200 border-2 border-white shadow-sm -ml-4"></div>
+                                </div>
+                            </header>
+
+                            <div id="demo-content-tasks" class="p-6">
+                                <div class="grid grid-cols-3 gap-4 mb-8">
+                                    <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
+                                        <div class="text-[10px] uppercase font-bold text-slate-400 mb-1">Health</div>
+                                        <div id="demo-health-status" class="text-lg font-bold text-green-500 hotspot" title="Calculated automatically based on task velocity">Stable</div>
+                                    </div>
+                                    <div class="bg-white p-4 rounded-xl border border-slate-100 shadow-sm col-span-2">
+                                        <div class="flex justify-between items-center mb-2">
+                                            <div class="text-[10px] uppercase font-bold text-slate-400">Completion</div>
+                                            <div id="demo-perc" class="text-[10px] font-bold text-blue-600">33%</div>
+                                        </div>
+                                        <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                            <div id="demo-progress-bar" class="progress-fill h-full bg-blue-500" style="width: 33%"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3">
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Pending Tasks</h4>
+                                    <div class="flex items-center justify-between p-3 bg-slate-50 border border-slate-100 rounded-lg opacity-60">
+                                        <div class="flex items-center gap-3">
+                                            <div class="w-4 h-4 rounded bg-green-500 flex items-center justify-center"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+                                            <span class="text-sm line-through text-slate-400">Design System Audit</span>
+                                        </div>
+                                        <span class="text-[10px] font-medium text-slate-400">Oct 12</span>
+                                    </div>
+                                    
+                                    <div id="task-api" onclick="syncDemoTask('api', !demoState.api)" class="task-item flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-blue-300 transition-colors cursor-pointer group">
+                                        <div class="flex items-center gap-3">
+                                            <div class="task-checkbox w-4 h-4 rounded border-2 border-slate-300 group-hover:border-blue-400 transition-colors"></div>
+                                            <span class="text-sm font-medium">API Integration Layer</span>
+                                        </div>
+                                        <span class="px-2 py-0.5 bg-red-50 text-red-600 text-[10px] font-bold rounded">P1</span>
+                                    </div>
+
+                                    <div id="task-interview" onclick="syncDemoTask('interview', !demoState.interview)" class="task-item flex items-center justify-between p-3 bg-white border border-slate-200 rounded-lg shadow-sm hover:border-blue-300 transition-colors cursor-pointer group">
+                                        <div class="flex items-center gap-3">
+                                            <div class="task-checkbox w-4 h-4 rounded border-2 border-slate-300 group-hover:border-blue-400 transition-colors"></div>
+                                            <span class="text-sm font-medium">User Interview Analysis</span>
+                                        </div>
+                                        <span class="px-2 py-0.5 bg-yellow-50 text-yellow-600 text-[10px] font-bold rounded">P2</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="demo-content-insights" class="p-6 hidden">
+                                <div class="mb-6">
+                                    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-4">Velocity Trends</h4>
+                                    <div class="h-32 w-full flex items-end gap-2 px-2 border-b border-slate-200">
+                                        <div class="flex-1 bg-blue-100 rounded-t h-12"></div>
+                                        <div class="flex-1 bg-blue-200 rounded-t h-20"></div>
+                                        <div class="flex-1 bg-blue-400 rounded-t h-24"></div>
+                                        <div class="flex-1 bg-blue-600 rounded-t h-28 animate-pulse"></div>
+                                        <div class="flex-1 bg-slate-100 rounded-t h-10"></div>
+                                    </div>
+                                </div>
+                                <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                                    <p class="text-xs text-indigo-700 leading-relaxed font-medium">
+                                        <span class="font-bold">AI Insight:</span> Team velocity is up 12% this week. We recommend assigning the "Security Patch" task to Sarah based on her recent performance in the auth module.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -147,8 +252,8 @@
             </button>
             <h3 id="modalTitle" class="text-2xl font-bold mb-2">Sign Up</h3>
             <p id="modalDesc" class="text-slate-600 mb-6">Enter your details below to get started.</p>
-            <form onsubmit="handleSubmit(event)" class="space-y-4">
-                <input type="email" placeholder="you@example.com" required class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+            <form id="authForm" onsubmit="handleSubmit(event)" class="space-y-4">
+                <input id="userEmail" type="email" placeholder="you@example.com" required class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
                 <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">Continue</button>
             </form>
         </div>
@@ -163,56 +268,160 @@
     </div>
 
     <script>
-        // NAVIGATION LOGIC
-        function navigateTo(pageId) {
-            // Update UI
-            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-            document.getElementById(`page-${pageId}`).classList.add('active');
-            window.scrollTo(0, 0);
+        // CONFIG & STATE
+        let currentCtaSource = 'Unknown';
+        let demoState = {
+            api: false,
+            interview: false,
+            insights: false,
+            isCompleted: false
+        };
 
-            // Track Page View in Amplitude
+        // ENHANCED TRACKER (Dual Tracking)
+        const trackEvent = (name, properties = {}) => {
+            const defaultProps = {
+                url: window.location.href,
+                path: window.location.pathname,
+                timestamp: new Date().toISOString(),
+                viewport: `${window.innerWidth}x${window.innerHeight}`
+            };
+            const combinedProps = { ...defaultProps, ...properties };
+
+            // Amplitude
             if (window.amplitude) {
-                window.amplitude.track('Page Viewed', {
-                    'page name': pageId,
-                    'is production': true
-                });
+                window.amplitude.track(name, combinedProps);
+            }
+
+            // Google Analytics
+            if (typeof gtag === 'function') {
+                gtag('event', name.replace(/\s+/g, '_').toLowerCase(), combinedProps);
+            }
+        };
+
+        // NAVIGATION
+        function navigateTo(pageId) {
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById(`page-${pageId}`);
+            if(target) target.classList.add('active');
+            
+            window.scrollTo(0, 0);
+            trackEvent('Page Viewed', { 'page_name': pageId });
+        }
+
+        // DEMO LOGIC
+        function syncDemoTask(taskId, isCompleted) {
+            demoState[taskId] = isCompleted;
+            
+            const chk = document.getElementById(`chk-${taskId}`);
+            if(chk) chk.checked = isCompleted;
+
+            const taskItem = document.getElementById(`task-${taskId}`);
+            if(taskItem) {
+                if(isCompleted) {
+                    taskItem.classList.add('completed');
+                    taskItem.querySelector('.task-checkbox').innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="4"><polyline points="20 6 9 17 4 12"></polyline></svg>';
+                } else {
+                    taskItem.classList.remove('completed');
+                    taskItem.querySelector('.task-checkbox').innerHTML = '';
+                }
+            }
+
+            if (taskId === 'insights' && isCompleted) demoNavigate('insights');
+
+            updateDemoProgress();
+            trackEvent('Demo Step Interacted', { 'step_id': taskId, 'action': isCompleted ? 'completed' : 'uncompleted' });
+        }
+
+        function updateDemoProgress() {
+            const steps = [demoState.api, demoState.interview, demoState.insights];
+            const completedCount = steps.filter(v => v).length;
+            const percentage = Math.min(33 + (completedCount * 22.3), 100);
+            
+            const roundedPerc = Math.ceil(percentage);
+            document.getElementById('demo-perc').innerText = roundedPerc + '%';
+            document.getElementById('demo-progress-bar').style.width = roundedPerc + '%';
+
+            const healthEl = document.getElementById('demo-health-status');
+            if (roundedPerc > 80) {
+                healthEl.innerText = "Excellent";
+                healthEl.className = "text-lg font-bold text-blue-500 hotspot";
+            }
+
+            if (roundedPerc >= 100 && !demoState.isCompleted) {
+                demoState.isCompleted = true;
+                showToast("Sandbox Goal Reached! 🎉");
+                trackEvent('Demo Completed', { 'total_steps': completedCount });
             }
         }
 
-        // AMPLITUDE INIT
-        window.addEventListener('load', function() {
-            if (window.amplitude) {
-                window.amplitude.initAll('7faa918bd690b2cc4733b67bb264ce98', {
-                    "analytics": { "autocapture": true },
-                    "sessionReplay": { "sampleRate": 1 }
-                });
-                window.amplitude.track('Session Started');
-            }
+        function demoNavigate(view) {
+            document.querySelectorAll('.demo-nav-item').forEach(item => item.classList.remove('active'));
+            const navItem = document.getElementById(`demo-nav-${view}`);
+            if(navItem) navItem.classList.add('active');
+
+            document.getElementById('demo-content-tasks').classList.add('hidden');
+            document.getElementById('demo-content-insights').classList.add('hidden');
+            document.getElementById(`demo-content-${view}`).classList.remove('hidden');
+
+            trackEvent('Demo View Switched', { 'view_id': view });
+            if (view === 'insights' && !demoState.insights) syncDemoTask('insights', true);
+        }
+
+        // INITIALIZATION
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                trackEvent('Session Started');
+            }, 100);
         });
 
-        // MODAL LOGIC
-        const modal = document.getElementById('ctaModal');
-        function showModal(type) {
-            modal.style.display = 'flex';
-            document.getElementById('modalTitle').innerText = type;
-            if (window.amplitude) {
-                window.amplitude.track('CTA Clicked', { 'button type': type });
-            }
-        }
-        function closeModal() { modal.style.display = 'none'; }
-        
-        function handleSubmit(e) {
-            e.preventDefault();
-            if (window.amplitude) {
-                window.amplitude.track('Form Submitted', { 'type': document.getElementById('modalTitle').innerText });
-            }
-            closeModal();
-            const toast = document.getElementById('successMessage');
-            toast.classList.remove('hidden');
-            setTimeout(() => toast.classList.add('hidden'), 3000);
+        // CTA & MODALS
+        function handleCtaClick(text, section) {
+            currentCtaSource = section;
+            trackEvent('CTA Engaged', { 'cta_text': text, 'section': section });
+            showModal(text);
         }
 
-        window.onclick = function(e) { if (e.target == modal) closeModal(); }
+        function showModal(type) {
+            document.getElementById('ctaModal').style.display = 'flex';
+            document.getElementById('modalTitle').innerText = type;
+        }
+
+        function closeModal() {
+            document.getElementById('ctaModal').style.display = 'none';
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            const email = document.getElementById('userEmail').value;
+            
+            // Amplitude Identify
+            if (window.amplitude) {
+                window.amplitude.setUserId(email);
+            }
+
+            // Google Analytics Lead Event
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                    'email': email,
+                    'method': 'Modal Form',
+                    'source': currentCtaSource
+                });
+            }
+
+            trackEvent('Lead Submitted', { 'email': email, 'source': currentCtaSource });
+            
+            closeModal();
+            showToast("Success! We'll be in touch.");
+        }
+
+        function showToast(text) {
+            const toast = document.getElementById('successMessage');
+            document.getElementById('toastText').innerText = text;
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3500);
+        }
+
+        window.onclick = e => { if (e.target == document.getElementById('ctaModal')) closeModal(); }
     </script>
 </body>
 </html>
