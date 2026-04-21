@@ -8,35 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Amplitude Unified SDK Loading -->
     <script type="text/javascript">
-        !function(window,document){var amplitude=window.amplitude||{_q:[],_iq:{}};if(amplitude.invoked)window.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{amplitude.invoked=!0;var as=document.createElement("script");as.type="text/javascript",as.integrity="sha384-v9un+wM0pGZ02F0KxKk/5bN4eP2o2Z5l+w2V3X1k5v5Wz2Y4z5v5Wz2Y4z5v5Wz2",as.crossOrigin="anonymous",as.async=!0,as.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz",as.onload=function(){window.amplitude.runQueuedFunctions()};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(as,s);function proxy(obj,fn){obj.prototype[fn]=function(){this._q.push({name:fn,args:Array.prototype.slice.call(arguments)});return this}}var Identify=function(){this._q=[];return this};var identifyFuncs=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove"];for(var i=0;i<identifyFuncs.length;i++){proxy(Identify,identifyFuncs[i])}amplitude.Identify=Identify;var Revenue=function(){this._q=[];return this};var revenueFuncs=["setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"];for(var j=0;j<revenueFuncs.length;j++){proxy(Revenue,revenueFuncs[j])}amplitude.Revenue=Revenue;var funcs=["init","initAll","track","identify","setGroup","revenue","flush","getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"];function setUpProxy(instance){function createProxy(fn){instance[fn]=function(){instance._q.push({name:fn,args:Array.prototype.slice.call(arguments)})}}for(var k=0;k<funcs.length;k++){createProxy(funcs[k])}}setUpProxy(amplitude);amplitude.getInstance=function(instance){instance=instance||"_default";if(!amplitude._iq.hasOwnProperty(instance)){amplitude._iq[instance]={_q:[]};setUpProxy(amplitude._iq[instance])}return amplitude._iq[instance]};window.amplitude=amplitude}}(window,document);
+        !function(window,document){var amplitude=window.amplitude||{_q:[],_iq:{}};if(amplitude.invoked)window.console&&console.error&&console.error("Amplitude snippet has been loaded.");else{amplitude.invoked=!0;var as=document.createElement("script");as.type="text/javascript",as.integrity="sha384-v9un+wM0pGZ02F0KxKk/5bN4eP2o2Z5l+w2V3X1k5v5Wz2Y4z5v5Wz2Y4z5v5Wz2",as.crossOrigin="anonymous",as.async=!0,as.src="https://cdn.amplitude.com/libs/analytics-browser-2.11.1-min.js.gz",as.onload=function(){window.amplitude.runQueuedFunctions()};var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(as,s);function proxy(obj,fn){obj.prototype[fn]=function(){this._q.push({name:fn,args:Array.prototype.slice.call(arguments)});return this}}var Identify=function(){this._q=[];return this};var identifyFuncs=["add","append","clearAll","prepend","set","setOnce","unset","preInsert","postInsert","remove"];for(var i=0;i<identifyFuncs.length;i++){proxy(Identify,identifyFuncs[i])}amplitude.Identify=Identify;var Revenue=function(){this._q=[];return this};var revenueFuncs=["setProductId","setQuantity","setPrice","setRevenue","setRevenueType","setEventProperties"];for(var j=0;j<revenueFuncs.length;j++){proxy(Revenue,revenueFuncs[j])}amplitude.Revenue=Revenue;var funcs=["init","initAll","track","identify","setGroup","revenue","flush","getDeviceId","setDeviceId","getSessionId","setSessionId","getUserId","setUserId","setOptOut","setTransport","reset","extendSession"];function setUpProxy(instance){function createProxy(fn){instance[fn]=function(){instance._q.push({name:fn,args:Array.prototype.slice.call(arguments)})}}for(var k=0;k<funcs.length;k++){createProxy(funcs[k])} }setUpProxy(amplitude);amplitude.getInstance=function(instance){instance=instance||"_default";if(!amplitude._iq.hasOwnProperty(instance)){amplitude._iq[instance]={_q:[]};setUpProxy(amplitude._iq[instance])}return amplitude._iq[instance]};window.amplitude=amplitude}}(window,document);
     </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-        }
-        .gradient-text {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .gradient-text { background: linear-gradient(90deg, #3b82f6, #8b5cf6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-nav { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(0, 0, 0, 0.05); }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1000; align-items: center; justify-content: center; }
+        .page-content { display: none; }
+        .page-content.active { display: block; animation: fadeIn 0.4s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-900">
@@ -45,19 +26,19 @@
     <nav class="glass-nav fixed w-full z-50 top-0 left-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="navigateTo('home')">
                     <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
                         <span class="text-white font-bold">N</span>
                     </div>
                     <span class="text-xl font-bold tracking-tight">Nexus</span>
                 </div>
                 <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
-                    <a href="#" class="hover:text-blue-600 transition-colors">Features</a>
-                    <a href="#" class="hover:text-blue-600 transition-colors">Pricing</a>
-                    <a href="#" class="hover:text-blue-600 transition-colors">About</a>
+                    <button onclick="navigateTo('features')" class="nav-link hover:text-blue-600 transition-colors">Features</button>
+                    <button onclick="navigateTo('pricing')" class="nav-link hover:text-blue-600 transition-colors">Pricing</button>
+                    <button onclick="navigateTo('about')" class="nav-link hover:text-blue-600 transition-colors">About</button>
                 </div>
                 <div class="flex items-center gap-4">
-                    <button onclick="showModal('Sign Up')" class="text-sm font-semibold text-slate-700 hover:text-blue-600">Log In</button>
+                    <button onclick="showModal('Log In')" class="text-sm font-semibold text-slate-700 hover:text-blue-600">Log In</button>
                     <button onclick="showModal('Sign Up')" class="bg-blue-600 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition-all shadow-md hover:shadow-lg">
                         Sign Up
                     </button>
@@ -66,202 +47,172 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="pt-32 pb-16 md:pt-48 md:pb-32 px-4">
-        <div class="max-w-5xl mx-auto text-center">
-            <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-4">
-                New v2.0 is now live
-            </span>
-            <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">
-                Manage your projects <br>
-                <span class="gradient-text">without the chaos.</span>
-            </h1>
-            <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Nexus helps teams ship faster by centralizing feedback, tracking progress, and automating the busy work. Join 10,000+ modern teams today.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-                <button onclick="showModal('Sign Up')" class="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all transform hover:-translate-y-1 shadow-xl">
-                    Sign Up Now
-                </button>
-                <button onclick="showModal('Request Demo')" class="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all transform hover:-translate-y-1 shadow-sm">
-                    Request Demo
-                </button>
+    <!-- PAGE: HOME -->
+    <main id="page-home" class="page-content active">
+        <header class="pt-32 pb-16 md:pt-48 md:pb-32 px-4">
+            <div class="max-w-5xl mx-auto text-center">
+                <span class="inline-block py-1 px-3 rounded-full bg-blue-50 text-blue-600 text-xs font-bold uppercase tracking-wider mb-4">New v2.0 is now live</span>
+                <h1 class="text-5xl md:text-7xl font-bold tracking-tight mb-6">Manage your projects <br><span class="gradient-text">without the chaos.</span></h1>
+                <p class="text-lg md:text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">Nexus helps teams ship faster by centralizing feedback, tracking progress, and automating the busy work.</p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                    <button onclick="showModal('Sign Up')" class="w-full sm:w-auto bg-slate-900 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-800 transition-all shadow-xl">Sign Up Now</button>
+                    <button onclick="navigateTo('features')" class="w-full sm:w-auto bg-white text-slate-900 border border-slate-200 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-50 transition-all shadow-sm">View Features</button>
+                </div>
             </div>
+        </header>
+    </main>
 
-            <div class="mt-16 pt-8 border-t border-slate-200">
-                <p class="text-sm font-semibold text-slate-400 uppercase tracking-widest mb-6">Trusted by industry leaders</p>
-                <div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale">
-                    <span class="text-2xl font-bold italic">Stripe</span>
-                    <span class="text-2xl font-bold italic">Airbnb</span>
-                    <span class="text-2xl font-bold italic">Slack</span>
-                    <span class="text-2xl font-bold italic">Figma</span>
+    <!-- PAGE: FEATURES -->
+    <main id="page-features" class="page-content pt-32 px-4">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Everything you need to scale</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Powerful tools designed for high-performance teams.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 pb-32">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Enterprise Security</h3>
+                    <p class="text-slate-600">Your data is encrypted at rest and in transit with bank-grade security protocols.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Real-time Analytics</h3>
+                    <p class="text-slate-600">Track team velocity and project health with beautiful, automated dashboards.</p>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Team Collaboration</h3>
+                    <p class="text-slate-600">Comment, tag, and assign tasks without ever leaving the main dashboard view.</p>
                 </div>
             </div>
         </div>
-    </header>
+    </main>
 
-    <section class="max-w-6xl mx-auto px-4 pb-32">
-        <div class="relative bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden aspect-video group">
-            <div class="absolute inset-0 bg-slate-100 flex items-center justify-center">
-                <svg width="800" height="450" viewBox="0 0 800 450" class="w-full h-auto">
-                    <rect x="20" y="20" width="760" height="410" rx="10" fill="white" />
-                    <rect x="20" y="20" width="200" height="410" rx="10" fill="#f8fafc" />
-                    <circle cx="50" cy="50" r="8" fill="#cbd5e1" />
-                    <rect x="70" y="45" width="100" height="10" rx="5" fill="#e2e8f0" />
-                    <rect x="40" y="90" width="160" height="30" rx="5" fill="#3b82f6" opacity="0.1" />
-                    <rect x="240" y="50" width="520" height="20" rx="5" fill="#f1f5f9" />
-                    <rect x="240" y="90" width="250" height="150" rx="10" fill="#f1f5f9" />
-                    <rect x="510" y="90" width="250" height="150" rx="10" fill="#f1f5f9" />
-                    <rect x="240" y="260" width="520" height="150" rx="10" fill="#f1f5f9" />
-                </svg>
+    <!-- PAGE: PRICING -->
+    <main id="page-pricing" class="page-content pt-32 px-4">
+        <div class="max-w-7xl mx-auto pb-32">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">Simple, transparent pricing</h2>
+                <p class="text-slate-600">Start for free, upgrade as you grow.</p>
+            </div>
+            <div class="grid md:grid-cols-2 max-w-4xl mx-auto gap-8">
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold mb-2">Starter</h3>
+                    <div class="text-4xl font-bold mb-6">$0 <span class="text-lg text-slate-400 font-normal">/mo</span></div>
+                    <ul class="space-y-4 mb-8 text-slate-600">
+                        <li class="flex items-center gap-2"><svg class="text-green-500" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Up to 5 users</li>
+                        <li class="flex items-center gap-2"><svg class="text-green-500" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Basic Analytics</li>
+                    </ul>
+                    <button onclick="showModal('Sign Up')" class="w-full py-3 rounded-xl border border-slate-200 font-bold hover:bg-slate-50 transition-colors">Get Started</button>
+                </div>
+                <div class="bg-slate-900 text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-blue-600 px-4 py-1 text-xs font-bold uppercase tracking-widest">Popular</div>
+                    <h3 class="text-xl font-bold mb-2">Pro</h3>
+                    <div class="text-4xl font-bold mb-6">$29 <span class="text-lg text-slate-400 font-normal">/mo</span></div>
+                    <ul class="space-y-4 mb-8 text-slate-300">
+                        <li class="flex items-center gap-2"><svg class="text-blue-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Unlimited users</li>
+                        <li class="flex items-center gap-2"><svg class="text-blue-400" width="20" height="20" fill="currentColor" viewBox="0 0 20 20"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg> Advanced Replays</li>
+                    </ul>
+                    <button onclick="showModal('Request Demo')" class="w-full py-3 rounded-xl bg-blue-600 font-bold hover:bg-blue-700 transition-colors">Try Pro Free</button>
+                </div>
             </div>
         </div>
-    </section>
+    </main>
 
+    <!-- PAGE: ABOUT -->
+    <main id="page-about" class="page-content pt-32 px-4">
+        <div class="max-w-3xl mx-auto text-center pb-32">
+            <h2 class="text-4xl font-bold mb-8">We're on a mission to end project management fatigue.</h2>
+            <p class="text-lg text-slate-600 mb-6 leading-relaxed">
+                Founded in 2024, Nexus was built by developers who were tired of switching between five different tools just to see what was happening in a sprint.
+            </p>
+            <p class="text-lg text-slate-600 leading-relaxed">
+                We believe that software should get out of your way and let you focus on what matters: building incredible products.
+            </p>
+        </div>
+    </main>
+
+    <!-- MODAL -->
     <div id="ctaModal" class="modal px-4">
         <div class="bg-white rounded-2xl p-8 max-w-md w-full shadow-2xl relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             <h3 id="modalTitle" class="text-2xl font-bold mb-2">Sign Up</h3>
-            <p id="modalDesc" class="text-slate-600 mb-6">Enter your details below to get started with Nexus.</p>
-            
-            <form id="landingForm" onsubmit="handleSubmit(event)" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-semibold mb-1">Email Address</label>
-                    <input id="emailInput" type="email" placeholder="you@example.com" required class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                </div>
-                <div id="companyField" class="hidden">
-                    <label class="block text-sm font-semibold mb-1">Company Name</label>
-                    <input id="companyInput" type="text" placeholder="Acme Inc." class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
-                </div>
-                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">
-                    Continue
-                </button>
+            <p id="modalDesc" class="text-slate-600 mb-6">Enter your details below to get started.</p>
+            <form onsubmit="handleSubmit(event)" class="space-y-4">
+                <input type="email" placeholder="you@example.com" required class="w-full px-4 py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:outline-none">
+                <button type="submit" class="w-full bg-blue-600 text-white py-3 rounded-lg font-bold hover:bg-blue-700 transition-colors">Continue</button>
             </form>
-            <p class="text-xs text-slate-400 mt-4 text-center">No credit card required. Cancel anytime.</p>
         </div>
     </div>
 
-    <div id="successMessage" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-4 rounded-xl shadow-2xl hidden transform translate-y-20 transition-transform duration-300 z-[2000]">
+    <!-- TOAST -->
+    <div id="successMessage" class="fixed bottom-8 left-1/2 -translate-x-1/2 bg-slate-900 text-white px-6 py-4 rounded-xl shadow-2xl hidden z-[2000]">
         <div class="flex items-center gap-3">
-            <div class="bg-green-500 rounded-full p-1">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="text-white"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            </div>
-            <span id="toastText">Success! We'll be in touch.</span>
+            <div class="bg-green-500 rounded-full p-1"><svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></div>
+            <span id="toastText">Success!</span>
         </div>
     </div>
 
     <script>
-        // Use initAll for the Unified SDK as per documentation
+        // NAVIGATION LOGIC
+        function navigateTo(pageId) {
+            // Update UI
+            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
+            document.getElementById(`page-${pageId}`).classList.add('active');
+            window.scrollTo(0, 0);
+
+            // Track Page View in Amplitude
+            if (window.amplitude) {
+                window.amplitude.track('Page Viewed', {
+                    'page name': pageId,
+                    'is production': true
+                });
+            }
+        }
+
+        // AMPLITUDE INIT
         window.addEventListener('load', function() {
             if (window.amplitude) {
-                // Initialize amplitude using initAll for the Unified SDK
                 window.amplitude.initAll('7faa918bd690b2cc4733b67bb264ce98', {
                     "analytics": { "autocapture": true },
                     "sessionReplay": { "sampleRate": 1 }
                 });
-
-                // Track Session Started using the direct proxy
-                window.amplitude.track('Session Started', {
-                    'session id': window.amplitude.getSessionId() || 'new-session',
-                    'session source': document.referrer || 'Direct'
-                });
+                window.amplitude.track('Session Started');
             }
         });
 
+        // MODAL LOGIC
         const modal = document.getElementById('ctaModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalDesc = document.getElementById('modalDesc');
-        const companyField = document.getElementById('companyField');
-        const successMessage = document.getElementById('successMessage');
-
         function showModal(type) {
             modal.style.display = 'flex';
-            modalTitle.innerText = type;
-            
+            document.getElementById('modalTitle').innerText = type;
             if (window.amplitude) {
-                window.amplitude.track('Feature Used', {
-                    'feature name': 'CTA Modal',
-                    'feature area': 'Onboarding',
-                    'use case': type,
-                    'is first time': true
-                });
-            }
-
-            if (type === 'Request Demo') {
-                modalDesc.innerText = 'Tell us about your team and we\'ll set up a custom walkthrough.';
-                companyField.classList.remove('hidden');
-            } else {
-                modalDesc.innerText = 'Enter your details below to get started with Nexus.';
-                companyField.classList.add('hidden');
+                window.amplitude.track('CTA Clicked', { 'button type': type });
             }
         }
-
-        function closeModal() {
-            modal.style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) closeModal();
-        }
-
+        function closeModal() { modal.style.display = 'none'; }
+        
         function handleSubmit(e) {
             e.preventDefault();
-            const type = modalTitle.innerText;
-            const emailInput = document.getElementById('emailInput');
-            const companyInput = document.getElementById('companyInput');
-            
             if (window.amplitude) {
-                const identifyObj = new window.amplitude.Identify();
-                identifyObj.set('Account Type', type === 'Sign Up' ? 'Individual' : 'Enterprise');
-                identifyObj.set('Signup Method', 'Email Form');
-                identifyObj.set('Activation Status', 'Started');
-                identifyObj.set('Customer Segment', companyInput.value ? 'B2B' : 'B2C');
-                window.amplitude.identify(identifyObj);
-
-                if (type === 'Sign Up') {
-                    window.amplitude.track('Signup Completed', {
-                        'signup method': 'Email Form',
-                        'account type': 'Free Tier',
-                        'is trial': true,
-                        'referrer': document.referrer,
-                        'landing page': window.location.pathname
-                    });
-                } else {
-                    window.amplitude.track('Feature Used', {
-                        'feature name': 'Demo Request',
-                        'feature area': 'Sales',
-                        'use case': 'Enterprise Evaluation',
-                        'is first time': true
-                    });
-                }
+                window.amplitude.track('Form Submitted', { 'type': document.getElementById('modalTitle').innerText });
             }
-
             closeModal();
-            const toastText = document.getElementById('toastText');
-            toastText.innerText = type === 'Sign Up' 
-                ? "Account created! Check your email to verify." 
-                : "Request received! A specialist will contact you shortly.";
-
-            successMessage.classList.remove('hidden');
-            setTimeout(() => successMessage.classList.remove('translate-y-20'), 10);
-            setTimeout(() => {
-                successMessage.classList.add('translate-y-20');
-                setTimeout(() => successMessage.classList.add('hidden'), 300);
-            }, 4000);
+            const toast = document.getElementById('successMessage');
+            toast.classList.remove('hidden');
+            setTimeout(() => toast.classList.add('hidden'), 3000);
         }
 
-        window.onerror = function(message, source, lineno, colno, error) {
-            if (window.amplitude) {
-                window.amplitude.track('Error Encountered', {
-                    'error category': 'Javascript Runtime',
-                    'error message': message,
-                    'error context': source + ':' + lineno
-                });
-            }
-        };
+        window.onclick = function(e) { if (e.target == modal) closeModal(); }
     </script>
 </body>
 </html>
